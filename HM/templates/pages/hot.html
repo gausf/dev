@@ -1,0 +1,60 @@
+{% extends 'pas.html' %}
+{% load static %}
+
+{% block content %}
+<!-- NEWSLETTER -->
+<div id="newsletter" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="newsletter">
+                    <form action="{% url 'Hot' %}"  method="get" >
+                        <p>Enter start point 
+                        <input class="input" type="text" name="country"><hr>
+                        <p>Enter Destination 
+                        <input class="input" type="text" name="dest" ><hr>
+                        <input type="submit" class="newsletter-btn">
+                        {{ my }}<hr>
+                        {{C}} to 
+                        {{D}}<hr>
+                        {% for x in Q %}
+                            {% if x != 0 %}
+                                {{x}}<hr>
+                            {% endif  %}
+                        {% endfor  %}
+                        <h2>min of total heuristic_value : {{HE}}<hr></h2>
+                        <h2>total min cost : {{CO}}<hr></h2>
+                        
+                    </form>
+                </div>             
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /NEWSLETTER -->
+<!--<form action="{% url 'Hot' %}"  method="get" >
+<h1> Enter country </h1>
+<input type="text" name="country">
+<hr>
+
+<input type="text" name="dest">
+<hr>
+ {{ my }}<hr>
+                {{C}} to 
+                {{D}}<hr>
+                {% for x in Q %}
+                {% if x != 0 %}
+                {{x}}<hr>
+                {% endif  %}
+                {% endfor  %}
+                min of total heuristic_value  {{HE}}<hr>
+                total min cost  {{CO}}<hr>
+                <h1> Enter Destination </h1>
+<input type="submit">-->
+</form>
+{% endblock %}
+
